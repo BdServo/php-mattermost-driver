@@ -535,4 +535,15 @@ class ChannelModel extends AbstractModel
     {
         return $this->client->get(UserModel::$endpoint. '/' . $userId . '/channels', $requestOptions);
     }
+
+    /**
+     * @param $channelId
+     * @param array $requestOptions
+     * @return ResponseInterface
+     */
+    public function moveChannel($channelId, array $requestOptions)
+    {
+        return $this->client->post(self::$endpoint . '/' . $channelId . '/move', $requestOptions);
+    }
 }
+
